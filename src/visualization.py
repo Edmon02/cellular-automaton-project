@@ -16,15 +16,15 @@ class Visualizer:
         self.font = pygame.font.SysFont(None, 24)
 
     def draw(self):
-        self.screen.fill((200, 200, 200))  # Background
+        self.screen.fill((200, 200, 200))  # Background)
 
         # Draw split-screen background
         for y in range(self.simulation.grid.height):
             for x in range(self.simulation.grid.width):
                 color = (
-                    (17, 74, 88)
+                    (216, 231, 226)
                     if self.simulation.grid.get_state(x, y) == 0
-                    else (216, 231, 226)
+                    else (17, 74, 88)
                 )
                 pygame.draw.rect(
                     self.screen,

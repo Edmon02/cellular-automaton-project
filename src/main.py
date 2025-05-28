@@ -13,14 +13,14 @@ def main():
     clock = pygame.time.Clock()
     i = 0
 
-    while i != 2:
+    while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
 
         sim.step()  # Run one iteration
         viz.draw()  # Update the display
-        clock.tick(1)  # Limit to 10 FPS
+        clock.tick(10)  # Limit to 10 FPS
         i += 1
 
     viz.close()
