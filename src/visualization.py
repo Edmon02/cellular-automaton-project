@@ -3,9 +3,11 @@ import pygame
 
 
 class Visualizer:
-    def __init__(self, simulation, cell_size=20):
+    def __init__(self, simulation, cell_size=20, show_grid=False, show_coordinates=False):
         self.simulation = simulation
         self.cell_size = cell_size
+        self.show_grid = show_grid
+        self.show_coordinates = show_coordinates
         self.width = simulation.grid.width * cell_size
         self.height = simulation.grid.height * cell_size
         pygame.init()
@@ -48,6 +50,38 @@ class Visualizer:
                 ),
                 self.cell_size // 2,
             )
+
+        # Draw grid lines for better coordinate visualization
+        if self.show_grid:
+            for x in range(self.simulation.grid.width + 1):
+                pygame.draw.line(
+                    self.screen,
+                    (128, 128, 128),
+                    (x * self.cell_size, 0),
+                    (x * self.cell_size, self.simulation.grid.height * self.cell_size),
+                    1,
+                )
+            for y in range(self.simulation.grid.height + 1):
+                pygame.draw.line(
+                    self.screen,
+                    (128, 128, 128),
+                    (0, y * self.cell_size),
+                    (self.simulation.grid.width * self.cell_size, y * self.cell_size),
+                    1,
+                )
+
+        # Draw coordinate labels for debugging
+        if self.show_coordinates:
+            small_font = pygame.font.SysFont(None, 12)
+            for y in range(min(10, self.simulation.grid.height)):  # Only show first 10 for clarity
+                for x in range(min(10, self.simulation.grid.width)):
+                    coord_text = small_font.render(
+                        f"{x},{y}", True, (64, 64, 64)
+                    )
+                    self.screen.blit(
+                        coord_text,
+                        (x * self.cell_size + 2, y * self.cell_size + 2),
+                    )
 
         # Draw counters
         text = self.font.render(
