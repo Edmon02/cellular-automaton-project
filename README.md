@@ -30,7 +30,7 @@ A high-performance cellular automaton simulation engine built with Python, featu
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/cellular_automaton_project.git
+git clone https://github.com/Edmon02/cellular_automaton_project.git
 cd cellular_automaton_project
 
 # Create virtual environment
