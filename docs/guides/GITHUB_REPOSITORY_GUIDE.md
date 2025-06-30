@@ -33,7 +33,7 @@ This project transforms a basic cellular automaton into a production-ready simul
 ## Quick Start
 ```bash
 # Clone the repository
-git clone [your-repo-url]
+git clone https://github.com/Edmon02/cellular_automaton_project.git
 cd cellular_automaton_project
 
 # Install dependencies
