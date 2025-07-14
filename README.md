@@ -30,8 +30,8 @@ A high-performance cellular automaton simulation engine built with Python, featu
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/Edmon02/cellular_automaton_project.git
-cd cellular_automaton_project
+git clone https://github.com/Edmon02/cellular-automaton-project.git
+cd cellular-automaton-project
 
 # Create virtual environment
 python -m venv venv
@@ -78,7 +78,7 @@ python examples/advanced_example.py
 ## 📁 Project Structure
 
 ```
-cellular_automaton_project/
+cellular-automaton-project/
 ├── 📂 src/                    # Core application code
 │   ├── main.py               # Main application entry point
 │   ├── rules.py              # Optimized rules engine (50-200x faster)
